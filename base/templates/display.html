@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Train Schedules</title>
+</head>
+
+<style>
+    body{
+        background-color: black;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        min-height: 100vh;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .train_schedule{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        color:white;
+    }
+
+    table{
+        border:2px solid white;
+    }
+
+    table , th , td{
+        border:2px solid white;
+        padding:1rem 2rem;
+        color:white;
+        font-weight:700;
+        font-size:1.2rem;
+    }
+</style>
+
+<body>
+    
+    <div class="trains_schedule">
+        <table>
+            <thead>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Train Source</th>
+                <th>Train Destination</th>
+                <th>Start Time</th>
+                <th>Reach Time</th>
+            </thead>
+            <tbody>
+                {% for i in trains %}                
+                <tr>
+                    <td>{{i.train_no}}</td>
+                    <td>{{i.train_name}}</td>
+                    <td>{{i.train_src}}</td>
+                    <td>{{i.train_dstn}}</td>
+                    <td>{{i.start_time}}</td>
+                    <td>{{i.reach_time}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    body {
+      font-family: 'Roboto Mono';
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 2rem 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width:60%;
+      background-color: black;
+      color:white;
+    }
+
+    .container h2 {
+      text-align: center;
+
+    }
+
+    form{
+        width:100%;
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap:2rem;
+
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      padding: 10px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      cursor: pointer;
+      padding:1rem 4rem;
+      font-weight:bolder;
+    }
+
+    .btn:hover {
+      background-color: #000;
+      color:white;
+      border:2px solid white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up to TripTravel.com</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="btn">SignUp</button>
+    </form>
+  </div>
+</body>
+</html>

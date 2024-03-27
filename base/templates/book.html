@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+        body {
+            font-family: 'Roboto Mono', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 3rem;
+            width: 70%;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bolder;
+        }
+
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 1.5rem;
+            border: 3px solid #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #000;
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        input[type="date"] {
+            width: 97%;
+            padding: 1.5rem 1rem;
+            font-size: 1.6rem;
+            background-color: black;
+            color: white;
+            border: 3px solid #fff;
+            border-radius: 5px;
+        }
+
+        /* Change color of date input */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+
+        /* CSS */
+        .form-group input[type="text"]::placeholder {
+            color: #fff;
+            /* Change placeholder color here */
+        }
+
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .search-buttons {
+            text-align: center;
+        }
+
+        .search-buttons button {
+            padding: 0.8rem 2rem;
+            background-color: white;
+            font-family: 'Roboto Mono';
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-left: 2rem;
+        }
+
+        .search-buttons button:hover {
+            color: white;
+            background-color: black;
+            font-weight: bolder;
+        }
+
+        .trains_schedule {
+            margin-top: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #fff;
+        }
+
+        th,
+        td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        th {
+            background-color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Travel Booking</h1>
+        <form method="post" action="{% url 'search_trains' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" placeholder="Enter departure location">
+            </div>
+            <div class="form-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" placeholder="Enter destination">
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" placeholder="Enter Date">
+            </div>
+            <div class="search-buttons">
+                <button type="submit" name="search_trains">Search Trains</button>
+                <button type="submit" name="search_buses">Search Buses</button>
+                <button type="submit" name="search_flights">Search Flights</button>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- <div class="trains_schedule">
+        <table>
+            <thead>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Train Source</th>
+                <th>Train Destination</th>
+                <th>Start Time</th>
+                <th>Reach Time</th>
+            </thead>
+            <tbody>
+                {% for i in trains %}                
+                <tr>
+                    <td>{{i.train_no}}</td>
+                    <td>{{i.train_name}}</td>
+                    <td>{{i.train_src}}</td>
+                    <td>{{i.train_dstn}}</td>
+                    <td>{{i.start_time}}</td>
+                    <td>{{i.reach_time}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> -->
+
+</body>
+
+</html>

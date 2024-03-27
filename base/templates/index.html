@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="../static/index.css">
+
+
+</head>
+
+<style>
+    .container , .hero_section{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+        width:100%;
+    }
+    .hero_section{
+        width:100%;
+        flex-direction: row;
+        padding:6rem 1.6rem;
+        /* border:2px solid white; */
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <nav class="nav_bar">
+            <div class="logo">
+                <a href="./index.html">TripTravel</a>
+            </div>
+            <div class="nav_icons">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Plan Trips</a>
+                <a href="">Contact</a>
+            </div>
+            <div class="login_btns">
+                <a href=""><button>Login</button></a>
+            </div>
+        </nav>
+
+
+        <div class="hero_section">
+            <div class="text_part">
+                <h1>Plan and Enjoy Trips with your Friends and Family.</h1>
+                <p>Travel Beautiful places in India just by clicking the Book Now button</p>
+                <div class="login_btns">
+                    <a href="{% url 'book' %}"><button>Book Now</button></a>
+                </div>
+            </div>
+            <div class="image_part">
+                <img src="/static/Images/hero.jpg" alt="">
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
