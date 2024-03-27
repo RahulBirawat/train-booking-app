@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Mono';
+            background-color: black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            padding: 1.2rem 0;
+        }
+
+        .logo a {
+            color:white;
+            font-size: 2.4rem;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        .nav_icons {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 45%;
+        }
+
+        .nav_icons a {
+            font-size: 1.4rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav_icons a:hover {
+            color: rgb(9, 244, 166);
+        }
+
+        .login_btns a button {
+            padding: 0.8rem 2rem;
+            background-color: white;
+            font-family: 'Roboto Mono';
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition:0.5s;
+        }
+
+        .login_btns a button:hover {
+            color: white;
+            background-color: black;
+            font-weight: bolder;
+        }
+
+        /* .hero_section{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            gap:3rem;
+            width:100%;
+            padding:3rem 0;
+        }
+
+        .text_part{
+            display:flex;
+            color:white;
+            flex-direction: column;
+            gap:2.3rem;
+            justify-content: center;
+            align-items: center;
+            width:40%;
+            line-height: 5rem; 
+           }
+
+        .text_part h1{
+            font-size:2.4rem;
+            font-weight:bolder;
+            FONT-FAMILY:"WF Visual Sans", sans-serif
+        } */
+
+        .book_now_btn {
+            padding: 0.8rem 2rem;
+            background-color: white;
+            font-family: 'Roboto Mono';
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition:0.5s;
+
+        }
+
+        .book_now_btn:hover {
+            color: white;
+            background-color: black;
+            font-weight: bolder;
+        }
